@@ -53,8 +53,7 @@ public class ItemAdapter extends PagedListAdapter<Item, ItemAdapter.ItemViewHold
 
         @Override
         public boolean areContentsTheSame(@NonNull Item oldItem, @NonNull Item newItem) {
-            boolean equals = oldItem.equals(newItem);
-            return equals;
+            return oldItem.equals(newItem);
         }
     };
 
