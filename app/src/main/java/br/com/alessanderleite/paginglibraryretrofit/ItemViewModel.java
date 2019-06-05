@@ -6,14 +6,14 @@ import android.arch.paging.LivePagedListBuilder;
 import android.arch.paging.PageKeyedDataSource;
 import android.arch.paging.PagedList;
 
-public class ItemViemModel extends ViewModel {
+public class ItemViewModel extends ViewModel {
 
     //creating livedata for PagedList and PagedKeyedDataSource
     LiveData<PagedList<Item>> itemPagedList;
     LiveData<PageKeyedDataSource<Integer, Item>> liveDataSource;
 
     //constructor
-    public ItemViemModel() {
+    public ItemViewModel() {
         //getting our data source factory
         ItemDataSourceFactory itemDataSourceFactory = new ItemDataSourceFactory();
 
@@ -27,7 +27,7 @@ public class ItemViemModel extends ViewModel {
                 .build();
 
         //Building the paged list
-        itemPagedList = (new LivePagedListBuilder(itemDataSourceFactory, pagedListConfig))
+        itemPagedList = (new LivePagedListBuilder<>(itemDataSourceFactory, pagedListConfig))
                 .build();
     }
 }
